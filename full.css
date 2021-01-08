@@ -1,0 +1,67 @@
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #000;
+	color: #fff;
+}
+
+#inside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+#barcode, .line {
+	height: 5000px;
+}
+
+.line {
+	position: absolute;
+	width: 5px;
+}
+
+#background {
+	display: none;
+}
+
+#box {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background: #000;
+	color: #fff;
+	padding: 10px;
+	border: 2px solid #fff;
+}
+
+#selector select {
+	font: normal 16px roboto, arial, sans-serif;
+	border: 0 none #fff;
+	padding: 2px;
+	margin-bottom: 5px;
+	background: #fff;
+	color: #000;
+	max-width: 330px;
+}
+
+#explanation {
+	font: normal 14px roboto, arial, sans-serif;
+}
+
+#explanation a,
+#explanation span.clickable {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#explanation a:hover,
+#explanation span.clickable:hover {
+	cursor: pointer;
+}
+
+.widescreenonly {
+	display: none;
+}

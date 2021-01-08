@@ -1,0 +1,75 @@
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #000;
+	color: #fff;
+}
+
+#inside {
+	position: fixed;
+	top: 47%;
+	left: 50%;
+	margin-top: -240px;
+	margin-left: -50%;
+	width: 100%;
+}
+
+#barcode, .line {
+	height: 400px;
+}
+
+.line {
+	position: absolute;
+	width: 5px;
+}
+
+#selector {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#selector select {
+	font: bold 24px roboto, arial, sans-serif;
+	text-align-last: center;
+	padding-left: 10px;
+	border: 0;
+}
+
+#background {
+	margin-top: 16px;
+	text-align: center;
+	display: none;
+}
+
+#background div {
+	display: inline-block;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+}
+
+#explanation {
+	text-align: center;
+	font: normal 14px roboto, arial, sans-serif;
+	margin-top: 18px;
+	padding-bottom: 3px;
+}
+
+#explanation a,
+#explanation span.clickable {
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid #999;
+}
+
+#explanation a:hover,
+#explanation span.clickable:hover {
+	cursor: pointer;
+	border-bottom: 1px dotted #999;
+}
+
+.fullonly {
+	display: none;
+}

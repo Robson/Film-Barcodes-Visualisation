@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Film Barcodes</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="AllFilms.js" type="text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="full.css" title="full" />
+		<link type="text/css" rel="stylesheet" href="widescreen.css" title="widescreen" />		
+	</head>
+	<body scroll="no" style="overflow: hidden">
+		<div id="inside">
+			<div id="barcode">
+			</div>
+			<div id="box">
+				<div id="selector">
+					<select id="film_selector" onchange="javascript:changeFilm()">
+						<script type="text/javascript">
+							data = data.sort(a => a.Name);
+							for (var index in data) {
+								document.write('<option value=' + index + '>' + data[index].Name + '</option>');
+							}
+						</script>
+					</select>
+				</div>
+				<div id="explanation">
+				Each line is the average colour at ten-second intervals.
+				<br class="fullonly" />
+				<span class="widescreenonly">Try the <span class="clickable" onclick="javascript:fullScreenVersion()">full-screen version</span>.</span>
+				<span class="fullonly">Try the <span class="clickable" onclick="javascript:widescreenVersion()">widescreen version</span>.</span>
+				<br class="fullonly" />
+				<span class="fullonly"><span class="clickable" onclick="javascript:hideExplanation();return null;">Hide this box.</span> Click anywhere to show it.</span>
+				<span class="widescreenonly"><span class="clickable" onclick="javascript:hideExplanation();return null;">Hide this message.</span> Click on the barcode to show it.</span>
+				<br />
+				<br class="widescreenonly" />
+				Created by <a href="http://robson.github.io">Robson</a>.
+				</div>
+			</div>
+			<div id="background">
+				<div id="white" onclick="javascript:changePageColours('white')"></div>
+				<div id="black" onclick="javascript:changePageColours('black')"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		
+			function hideExplanation() {
+				$('#box').css('display', 'none');
+			}
+			
+			function showExplanation(x) {
+				$('#box').css('display', 'block');			
+			}
+			
+			function fullScreenVersion() {		
+				var links = document.getElementsByTagName("link");
+				for (var i = 0; i < links.length; i++ ) {
+					if (links[i].title == "widescreen") {
+						links[i].disabled = true;
+					}
+					if (links[i].title == "full") {
+						links[i].disabled = false;
+					}
+				}
+			}
+			
+			function widescreenVersion() {		
+				var links = document.getElementsByTagName("link");
+				for (var i = 0; i < links.length; i++ ) {
+					if (links[i].title == "widescreen") {
+						links[i].disabled = false;
+					}
+					if (links[i].title == "full") {
+						links[i].disabled = true;
+					}
+				}
+			}						
+			
+			function changeFilm() {
+				var filmIndex = document.getElementById("film_selector").selectedIndex;
+				$('#barcode *').remove();
+				var film = data[filmIndex];
+				for (var x = 0; x < film.Colours.length; x++) {
+					var percent = (x / film.Colours.length * 100).toFixed(2);
+					$('#barcode').append("<div class='line' style='left:" + percent + "%;background:#" + film.Colours[x] + "'></div>")
+				}
+				$('.line').on('click', function() { showExplanation('L'); });
+			}
+			
+			fullScreenVersion();
+			changeFilm();
+			
+		</script>
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+			_uacct = "UA-2202750-1";
+			urchinTracker();
+		</script>		
+	</body>
+</html>
