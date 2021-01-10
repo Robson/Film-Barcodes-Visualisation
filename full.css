@@ -38,7 +38,7 @@ html {
 }
 
 #selector select {
-	font: normal 16px roboto, arial, sans-serif;
+	font: normal 16px rubik, arial, sans-serif;
 	border: 0 none #fff;
 	padding: 2px;
 	margin-bottom: 5px;
@@ -48,7 +48,7 @@ html {
 }
 
 #explanation {
-	font: normal 14px roboto, arial, sans-serif;
+	font: normal 14px rubik, arial, sans-serif;
 }
 
 #explanation a,

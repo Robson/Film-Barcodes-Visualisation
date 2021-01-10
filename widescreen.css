@@ -31,7 +31,7 @@ html {
 }
 
 #selector select {
-	font: bold 24px roboto, arial, sans-serif;
+	font: bold 24px rubik, arial, sans-serif;
 	text-align-last: center;
 	padding-left: 10px;
 	border: 0;
@@ -52,7 +52,7 @@ html {
 
 #explanation {
 	text-align: center;
-	font: normal 14px roboto, arial, sans-serif;
+	font: normal 14px rubik, arial, sans-serif;
 	margin-top: 18px;
 	padding-bottom: 3px;
 }
