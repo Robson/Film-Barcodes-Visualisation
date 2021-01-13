@@ -8,7 +8,7 @@ html {
 }
 
 #inside {
-	position: fixed;
+	position: absolute;
 	top: 47%;
 	left: 50%;
 	margin-top: -240px;
@@ -25,6 +25,12 @@ html {
 	width: 5px;
 }
 
+#background {
+	margin-top: 16px;
+	text-align: center;
+	display: none;
+}
+
 #selector {
 	margin-top: 20px;
 	text-align: center;
@@ -35,12 +41,7 @@ html {
 	text-align-last: center;
 	padding-left: 10px;
 	border: 0;
-}
-
-#background {
-	margin-top: 16px;
-	text-align: center;
-	display: none;
+	max-width: 100%;
 }
 
 #background div {
@@ -52,7 +53,8 @@ html {
 
 #explanation {
 	text-align: center;
-	font: normal 14px rubik, arial, sans-serif;
+	font: normal 15px rubik, arial, sans-serif;
+	font-weight: 300;
 	margin-top: 18px;
 	padding-bottom: 3px;
 }
@@ -72,4 +74,11 @@ html {
 
 .fullonly {
 	display: none;
+}
+
+@media (max-width: 800px) {
+	#selector select {
+		font-weight: normal;
+		font-size: 14px;
+	}
 }

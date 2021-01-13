@@ -29,12 +29,13 @@ html {
 
 #box {
 	position: absolute;
-	top: 15px;
-	left: 15px;
+	top: 10px;
+	left: 10px;
 	background: #000;
 	color: #fff;
 	padding: 10px;
-	border: 2px solid #fff;
+	max-width: 75%;
+	border-radius: 8px;
 }
 
 #selector select {
@@ -44,7 +45,8 @@ html {
 	margin-bottom: 5px;
 	background: #fff;
 	color: #000;
-	max-width: 330px;
+	width: 330px;
+	max-width: 90%;
 }
 
 #explanation {
@@ -64,4 +66,14 @@ html {
 
 .widescreenonly {
 	display: none;
+}
+
+@media (max-width: 800px) {
+	#selector select {
+		font-size: 14px;
+	}
+	
+	.hidesmallscreens {
+		display: none;
+	}
 }
