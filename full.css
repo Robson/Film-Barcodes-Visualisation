@@ -45,8 +45,6 @@ html {
 	margin-bottom: 5px;
 	background: #fff;
 	color: #000;
-	width: 330px;
-	max-width: 90%;
 }
 
 #explanation {
@@ -71,6 +69,7 @@ html {
 @media (max-width: 800px) {
 	#selector select {
 		font-size: 14px;
+		max-width: 95%;
 	}
 	
 	.hidesmallscreens {
