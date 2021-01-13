@@ -6,4 +6,4 @@ Each line in the image above is the average colour at ten-second intervals for t
 
 This project is a webpage that allows you to view that for a variety of films.
 
-It can be viewed here: http://iceyboard.no-ip.org/film_barcodes/
+It can be viewed here: http://robson.plus/film-barcodes/
