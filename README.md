@@ -1,6 +1,6 @@
 # Film Barcodes Visualisation
 
-<img src="http://iceyboard.no-ip.org/main/average.png" />
+<img src="http://robson.plus/images/film-barcodes.png" />
 
 Each line in the image above is the average colour at ten-second intervals for the film Exam.
 
