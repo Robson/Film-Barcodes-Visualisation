@@ -42,6 +42,8 @@ To add a film to the page:
 * Run the BAT file.
 * Wait.
 
+You can speed up the playing of the film using different commands, but I've found that this sometimes results in corrupt frames. So I just run it at normal speed, which solves that issue.
+
 ### Step 2
 
 *To-do*
