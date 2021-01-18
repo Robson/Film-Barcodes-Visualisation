@@ -32,14 +32,7 @@
 			</div>
 			<div id="box">
 				<div id="selector">
-					<select id="film_selector" onchange="javascript:changeFilm()">
-						<script>
-							data = data.sort(a => a.Name);
-							for (var index in data) {
-								document.write('<option value=' + index + '>' + data[index].Name + '</option>');
-							}
-						</script>
-					</select>
+					<select id="film_selector" onchange="javascript:changeFilm()"></select>
 				</div>
 				<div id="explanation">
 				Each line is the average colour at ten-second intervals.
@@ -65,11 +58,16 @@
 		</div>
 		<script>
 		
+			data.sort(function(a, b) { return a.Name > b.Name; });
+			for (var index in data) {
+				$('#film_selector').append('<option value=' + index + '>' + data[index].Name + '</option>');
+			}		
+		
 			function hideExplanation() {
 				$('#box').css('display', 'none');
 			}
 			
-			function showExplanation(x) {
+			function showExplanation() {
 				$('#box').css('display', 'block');			
 			}
 			
@@ -103,9 +101,9 @@
 				var film = data[filmIndex];
 				for (var x = 0; x < film.Colours.length; x++) {
 					var percent = (x / film.Colours.length * 100).toFixed(2);
-					$('#barcode').append("<div class='line' style='left:" + percent + "%;background:#" + film.Colours[x] + "'></div>")
+					$('#barcode').append("<div class='line' style='left:" + percent + "%;background:#" + film.Colours[x] + "'></div>");
 				}
-				$('.line').on('click', function() { showExplanation('L'); });
+				$('.line').on('click', function() { showExplanation(); });
 			}
 			
 			fullScreenVersion();
