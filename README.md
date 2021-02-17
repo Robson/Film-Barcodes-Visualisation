@@ -57,7 +57,7 @@ This is the JSON data with one line per film. Each film has an array of hex colo
 
 This is the webpage to show the barcodes and the JavaScript that generates the barcodes at run time.
 
-## normal.css + widescreen
+### normal.css + widescreen
 
 These are the stylesheets that format each of the views. The user can switch between these at any time.
  
