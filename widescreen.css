@@ -25,12 +25,6 @@ html {
 	width: 5px;
 }
 
-#background {
-	margin-top: 16px;
-	text-align: center;
-	display: none;
-}
-
 #selector {
 	margin-top: 20px;
 	text-align: center;
@@ -44,17 +38,11 @@ html {
 	max-width: 100%;
 }
 
-#background div {
-	display: inline-block;
-	cursor: pointer;
-	width: 12px;
-	height: 12px;
-}
-
 #explanation {
 	text-align: center;
 	font: normal 15px rubik, arial, sans-serif;
 	font-weight: 300;
+	color: #aaa;
 	margin-top: 18px;
 	padding-bottom: 3px;
 }
@@ -63,7 +51,7 @@ html {
 #explanation span.clickable {
 	color: #fff;
 	text-decoration: none;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #000;
 }
 
 #explanation a:hover,
@@ -72,7 +60,23 @@ html {
 	border-bottom: 1px dotted #999;
 }
 
-.fullonly {
+.normalonly {
+	display: none;
+}
+
+:not(:fullscreen) .yesfullscreen {
+	display: none;
+}
+
+:fullscreen .yesfullscreen {
+	display: inline;
+}
+
+:not(:fullscreen) .nofullscreen {
+	display: inline;
+}
+
+:fullscreen .nofullscreen {
 	display: none;
 }
 

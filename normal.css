@@ -15,7 +15,7 @@ html {
 }
 
 #barcode, .line {
-	height: 5000px;
+	height: 10000px;
 }
 
 .line {
@@ -23,16 +23,12 @@ html {
 	width: 5px;
 }
 
-#background {
-	display: none;
-}
-
 #box {
 	position: absolute;
 	top: 10px;
 	left: 10px;
 	background: #000;
-	color: #fff;
+	color: #aaa;
 	padding: 10px;
 	max-width: 75%;
 	border-radius: 8px;
@@ -54,15 +50,33 @@ html {
 #explanation a,
 #explanation span.clickable {
 	color: #fff;
-	text-decoration: underline;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
 }
 
 #explanation a:hover,
 #explanation span.clickable:hover {
 	cursor: pointer;
+	border-bottom: 1px dotted #999;
 }
 
 .widescreenonly {
+	display: none;
+}
+
+:not(:fullscreen) .yesfullscreen {
+	display: none;
+}
+
+:fullscreen .yesfullscreen {
+	display: inline;
+}
+
+:not(:fullscreen) .nofullscreen {
+	display: inline;
+}
+
+:fullscreen .nofullscreen {
 	display: none;
 }
 
