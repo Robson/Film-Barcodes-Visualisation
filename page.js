@@ -1,8 +1,3 @@
-data.sort(function(a, b) { return a.Name > b.Name; });
-for (var index in data) {
-	$('#film_selector').append('<option value=' + index + '>' + data[index].Name + '</option>');
-}		
-
 function hideExplanation() {
 	$('#box').css('display', 'none');
 }
@@ -11,25 +6,25 @@ function showExplanation() {
 	$('#box').css('display', 'block');			
 }
 
-function fullScreenVersion() {		
+function normalScreenVersion() {		
 	var links = document.getElementsByTagName("link");
 	for (var i = 0; i < links.length; i++ ) {
 		if (links[i].title == "widescreen") {
 			links[i].disabled = true;
 		}
-		if (links[i].title == "full") {
+		if (links[i].title == "normal") {
 			links[i].disabled = false;
 		}
 	}
 }
 
-function widescreenVersion() {		
+function wideScreenVersion() {		
 	var links = document.getElementsByTagName("link");
 	for (var i = 0; i < links.length; i++ ) {
 		if (links[i].title == "widescreen") {
 			links[i].disabled = false;
 		}
-		if (links[i].title == "full") {
+		if (links[i].title == "normal") {
 			links[i].disabled = true;
 		}
 	}
@@ -46,5 +41,24 @@ function changeFilm() {
 	$('.line').on('click', function() { showExplanation(); });
 }
 
-fullScreenVersion();
+function enterFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  }
+}
+
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+}
+
+// make the film list
+data.sort(function(a, b) { return a.Name > b.Name; });
+for (var index in data) {
+	$('#film_selector').append('<option value=' + index + '>' + data[index].Name + '</option>');
+}		
+
+// show the default view
+normalScreenVersion();
 changeFilm();
