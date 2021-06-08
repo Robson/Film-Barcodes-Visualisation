@@ -9,7 +9,7 @@ html {
 
 #inside {
 	position: absolute;
-	top: 47%;
+	top: 45%;
 	left: 50%;
 	margin-top: -240px;
 	margin-left: -50%;
@@ -17,7 +17,7 @@ html {
 }
 
 #barcode, .line {
-	height: 400px;
+	height: 375px;
 }
 
 .line {
