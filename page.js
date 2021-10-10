@@ -53,6 +53,12 @@ function exitFullscreen() {
   }
 }
 
+function isUsed(a) {
+	return a;
+}
+
+isUsed([hideExplanation, exitFullscreen, enterFullscreen, wideScreenVersion])
+
 // make the film list
 data.sort(function(a, b) { return a.Name > b.Name; });
 for (var index in data) {
