@@ -81,23 +81,17 @@ This is built using:
 
 To add a film to the page:
 
-### Step 1
+### Step 1: Export the Frames
 
-*Export the frames using VLC.*
-
-* Get the film.
-* Make a folder to save the frames.
-* Make a file called export.bat
+* [Get FFmpeg](https://ffmpeg.org/) and put the exe/dlls in a folder.
+* Get the film. Put it in the same folder. Can be mp4, mkv, avi, etc...
+* Make a file called export.bat in the same folder.
 * In the BAT file, put this line:
-> "C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" "C:\Temp\Films\Mean Girls.mp4" --rate=1 --video-filter=scene --vout=dummy --aout=dummy --start-time=0 --scene-format=png --scene-ratio=240 --scene-prefix=snap --scene-path=C:\Temp\Films\mg\ vlc://quit
-* Change the Mean Girls path+filename to be a link to your own film.
-* Change the --scene-path to be the path to your folder.
-* You may need to change the path to VLC.
+> ffmpeg -i _filename-of-your-film_ -r 0.1 frame_%%04d.png
+* Change the filename to match your film.
 * Save the BAT file.
 * Run the BAT file.
 * Wait.
-
-You can speed up the playing of the film using different commands, but I've found that this sometimes results in corrupt frames. So I just run it at normal speed, which solves that issue.
 
 ### Step 2
 
