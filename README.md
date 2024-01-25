@@ -75,28 +75,62 @@ This is built using:
 
 <a href="http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frobson.plus%2Ffilm-barcodes%2Fwidescreen.css&profile=css3svg&usermedium=all&warning=1"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS" /></a>
 
-[![X](https://www.codefactor.io/repository/github/robson/Film-Barcodes-Visualisation/badge?style=flat-square)](https://www.codefactor.io/repository/github/robson/Film-Barcodes-Visualisation)
+[![X](https://www.codefactor.io/repository/GitHub/robson/Film-Barcodes-Visualisation/badge?style=flat-square)](https://www.codefactor.io/repository/GitHub/robson/Film-Barcodes-Visualisation)
 
-## Steps (Incomplete)
+## Steps
 
-To add a film to the page:
+Follow these steps to make your own version of this project with your own set of films.
 
-### Step 1: Export the Frames
+The steps are currently untested. If you encounter a problem, just create an issue in this repository and I'll help you out.
 
-* [Get FFmpeg](https://ffmpeg.org/) and put the exe/dlls in a folder.
-* Get the film. Put it in the same folder. Can be mp4, mkv, avi, etc...
-* Make a file called export.bat in the same folder.
-* In the BAT file, put this line:
-> ffmpeg -i _filename-of-your-film_ -r 0.1 frame_%%04d.png
-* Change the filename to match your film.
-* Save the BAT file.
-* Run the BAT file.
-* Wait.
+You will need Visual Studio and very basic C# knowledge.
 
-### Step 2
+### Step 1: Get all the films
 
-*To-do*
+ * Create the path: _c:\temp\films\_
+ * Put all your films in there. The film format can be any of: mp4, mkv, avi, etc...
 
-### Step 3
+### Step 2: Other requirements
 
-*To-do*
+ * [Get FFmpeg](https://ffmpeg.org/)
+ * Put the exe/dlls in _c:\temp\films\_ with your films.
+ * [Download this repository](https://codeload.github.com/Robson/Film-Barcodes-Visualisation/zip/refs/heads/main). Unzip it somewhere that is *not* _c:\temp\films\_
+
+### Step 3: Get the frames
+
+Repeat this for each film:
+
+ * In _c:\temp\films\_ make a folder that has the name of your film.
+ * In that new folder, create a file called _name-of-your-film_.bat 
+ * In the BAT file, put this line:
+ > C:\Temp\films\ffmpeg -i _filename-of-your-film_ -r 0.1 frame_%%04d.png
+ * After that line, put a new line which just has:
+ > pause
+ * Save the BAT file.
+ * Run the BAT file.
+ * Wait.
+
+Multiple BAT files can be run at the same time, which will greatly speed up this step.
+
+### Step 4: Convert frames to JSON
+
+ * In your downloaded copy of the repository, open _JsonCreator\JsonCreator.sln_ in Visual Studio.
+ * Navigate to the code of _FrmMain.cs_
+ * In _public FrmDisplay_ you will see a few lines starting with _new FrameReader_. For each of your films, you will need one equivalent line like this.
+ * For each of your films, create a new line in that format. The first bit of text is the name of the film. The second bit of text is the folder containing the frames for that film.
+ * Make sure to delete the three example lines (Frankenstein, Midsommar, Oppenheimer).
+ * Run the code.
+ * Wait.
+ * A window will appear saying "Done".
+ 
+### Step 5: Combine with the webpage.
+
+ * In the folder for your JsonCreator project, navigate to Bin\Debug
+ * You will see a _data.js_ file. Copy that file.
+ * In your downloaded version of the repository, overwrite the _data.js_ file with your newly created _data.js_ file.
+ 
+### Step 6: Testing
+
+ * In your downloaded version of the repository, open index.html
+ * You should see the list of films and the barcode should appear for each film.
+
