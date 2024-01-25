@@ -87,22 +87,22 @@ You will need Visual Studio and very basic C# knowledge.
 
 ### Step 1: Get all the films
 
- * Create the path: *c:\temp\films\*
+ * Create the path: *c:\temp\films\\*
  * Put all your films in there. The film format can be any of: mp4, mkv, avi, etc...
 
 ### Step 2: Other requirements
 
  * [Get FFmpeg](https://ffmpeg.org/)
- * Put the exe/dlls in *c:\temp\films\* with your films.
- * [Download this repository](https://codeload.github.com/Robson/Film-Barcodes-Visualisation/zip/refs/heads/main). Unzip it somewhere that is **not** *c:\temp\films\*
+ * Put the exe/dlls in *c:\temp\films\\* with your films.
+ * [Download this repository](https://codeload.github.com/Robson/Film-Barcodes-Visualisation/zip/refs/heads/main). Unzip it somewhere that is **not** *c:\temp\films\\*
 
 ### Step 3: Get the frames
 
 Repeat this for each film:
 
- * In *c:\temp\films\* make a folder that has the name of your film.
+ * In *c:\temp\films\\* make a folder that has the name of your film.
  * In that new folder, create a file called *name-of-your-film*.bat 
- * In the BAT file, put this line: (make sure to edit the part in the middle)
+ * In the BAT file, put this line: (make sure to edit the filename of your film)
  > C:\Temp\films\ffmpeg -i *filename-of-your-film* -r 0.1 frame_%%04d.png
  * After that line, put a new line which just has:
  > pause
@@ -125,12 +125,12 @@ Multiple BAT files can be run at the same time, which will greatly speed up this
  
 ### Step 5: Combine with the webpage.
 
- * In the folder for your JsonCreator project, navigate to Bin\Debug
+ * In the folder for your JsonCreator project, navigate to *Bin\Debug*
  * You will see a *data.js* file. Copy that file.
  * In your downloaded version of the repository, overwrite the *data.js* file with your newly created *data.js* file.
  
 ### Step 6: Testing
 
- * In your downloaded version of the repository, open index.html
+ * In your downloaded version of the repository, open *index.html*
  * You should see the list of films and the barcode should appear for each film.
 
