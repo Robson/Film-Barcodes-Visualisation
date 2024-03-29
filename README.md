@@ -10,7 +10,7 @@
  * [File Descriptions](#file-descriptions)
  * [Technologies](#technologies)
  * [Validation](#validation)
- * [Steps (Incomplete)](#steps-incomplete)
+ * [Steps](#steps)
 
 ## Demo
 
@@ -103,7 +103,7 @@ Repeat this for each film:
  * In *c:\temp\films\\* make a folder that has the name of your film.
  * In that new folder, create a file called *name-of-your-film*.bat 
  * In the BAT file, put this line: (make sure to edit the filename of your film)
- > C:\Temp\films\ffmpeg -i C:\Temp\films\*filename-of-your-film-including-the-file-extension* -r 0.1 frame_%%04d.png
+ > C:\Temp\films\ffmpeg -i C:\Temp\films\\*filename-of-your-film-including-the-file-extension* -r 0.1 frame_%%04d.png
  * After that line, put a new line which just has:
  > pause
  * Save the BAT file.
