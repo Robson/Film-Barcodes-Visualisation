@@ -57,7 +57,7 @@ html {
 #explanation a:hover,
 #explanation span.clickable:hover {
 	cursor: pointer;
-	border-bottom: 1px dotted #999;
+	border-bottom: 1px dotted #fff;
 }
 
 .normalonly {
