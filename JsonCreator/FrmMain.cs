@@ -19,9 +19,7 @@
 
             File.WriteAllText(OutputFilename, "var data = [");
 
-            new FrameReader("Frankenstein", RootFolder + "frank");
-            new FrameReader("Midsommar", RootFolder + "mid");
-            new FrameReader("Oppenheimer", RootFolder + "oppen");
+            new FrameReader("Perfect Blue", RootFolder + "pb");
 
             File.AppendAllText(OutputFilename, "\n];");
         }
