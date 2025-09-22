@@ -72,7 +72,7 @@ isUsed([hideExplanation, exitFullscreen, enterFullscreen, wideScreenVersion])
 
 
 // make the film list
-data.sort(function(a, b) { return a.Name > b.Name; });
+data.sort(function(a, b) { return a.Name.localeCompare(b.Name); });
 for (var index in data) {
 	$('#film_selector').append('<option value=' + index + '>' + data[index].Name + '</option>');
 }

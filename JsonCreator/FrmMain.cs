@@ -19,7 +19,10 @@
 
             File.WriteAllText(OutputFilename, "var data = [");
 
-            new FrameReader("Perfect Blue", RootFolder + "pb");
+            new FrameReader("Cries and Whispers", RootFolder + "caw");
+            new FrameReader("Frozen", RootFolder + "f");
+            new FrameReader("Marie Antoinette", RootFolder + "ma");
+            new FrameReader("The Umbrellas of Cherbourg", RootFolder + "tuoc");
 
             File.AppendAllText(OutputFilename, "\n];");
         }
